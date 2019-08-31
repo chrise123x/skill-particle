@@ -46,7 +46,7 @@ class ParticleSkill(MycroftSkill):
             access_token = ''
             args = 'z1t01'
 
-r = requests.post('https://api.particle.io/v1/devices/%s/sprinkler?' % device_id, data={'args': args, 'access_token':access_token})
+            r = requests.post('https://api.particle.io/v1/devices/%s/sprinkler?' % device_id, data={'args': args, 'access_token':access_token})
 
 print (r.text)
             self.speak_dialog("watering.orchids")
