@@ -44,6 +44,7 @@ class ParticleSkill(MycroftSkill):
     def start_intent(self, message):
         if message.data["Location"] == "orchids":
             print ("in start_intent")
+            print(args)
             
             r = requests.post('https://api.particle.io/v1/devices/%s/sprinkler?' % device_id, data={'args': args, 'access_token':access_token})
             print (r.text)
