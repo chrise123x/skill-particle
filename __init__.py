@@ -13,6 +13,8 @@ from adapt.intent import IntentBuilder
 from mycroft.skills.core import MycroftSkill, intent_handler
 from mycroft.util.log import LOG
 import requests
+import keys
+
 
 # Each skill is contained within its own class, which inherits base methods
 # from the MycroftSkill class.  You extend this class as shown below.
@@ -42,9 +44,7 @@ class ParticleSkill(MycroftSkill):
     def start_intent(self, message):
         if message.data["Location"] == "orchids":
             print ("in start_intent")
-            device_id = ''
-            access_token = ''
-            args = 'z1t01'
+            
             r = requests.post('https://api.particle.io/v1/devices/%s/sprinkler?' % device_id, data={'args': args, 'access_token':access_token})
             print (r.text)
             self.speak_dialog("watering.orchids")
