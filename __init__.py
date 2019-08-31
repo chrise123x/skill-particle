@@ -45,11 +45,10 @@ class ParticleSkill(MycroftSkill):
             device_id = ''
             access_token = ''
             args = 'z1t01'
-
             r = requests.post('https://api.particle.io/v1/devices/%s/sprinkler?' % device_id, data={'args': args, 'access_token':access_token})
-
-print (r.text)
+            print (r.text)
             self.speak_dialog("watering.orchids")
+        
         else:  # assume "down"
             self.speak_dialog("watering.now")
         # In this case, respond by simply speaking a canned response.
