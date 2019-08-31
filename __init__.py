@@ -47,7 +47,7 @@ class ParticleSkill(MycroftSkill):
             
             r = requests.post('https://api.particle.io/v1/devices/%s/sprinkler?' % device_id, data={'args': args, 'access_token':access_token})
             print (r.text)
-            LOG.debug(r)
+            LOG.info(r)
             self.speak_dialog("watering.orchids")
         
         else:  # assume "down"
