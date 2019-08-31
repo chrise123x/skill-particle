@@ -13,7 +13,7 @@ from adapt.intent import IntentBuilder
 from mycroft.skills.core import MycroftSkill, intent_handler
 from mycroft.util.log import LOG
 import requests
-import keys
+from keys import *
 
 
 # Each skill is contained within its own class, which inherits base methods
